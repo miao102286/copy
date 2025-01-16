@@ -1,6 +1,28 @@
-# Copy
+# 基本架構
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+latest-news  最新消息
+--primeNG table　類ngFor
+
+deposit-page 存款
+--@input @output 轉帳交易 組件內部外部值的傳遞
+
+loan-page    貸款
+
+before-login 個人網銀
+---ngIf 提示輸入
+---[class]繫結 使用者帳號+密碼
+---登入後跳轉 router.navigate
+
+
+
+
+
+
+
+
+
+
+
 
 ## Development server
 
@@ -20,7 +42,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
 
 ## Further help
 

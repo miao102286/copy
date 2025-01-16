@@ -1,0 +1,38 @@
+<p>before-login works!</p>
+<form [formGroup]="loginForm"  (submit)="onSubmit()">
+  <div>
+    <label for="">身分證字號</label>
+    <div class="input">
+      <input formControlName="id" type="text">
+    </div>
+    <div *ngIf="id?.touched && id?.invalid && id?.errors" class="error">
+      <div *ngIf="id?.errors?.required">請輸入身分證字號</div>
+    </div>
+
+  </div>
+  <div>
+    <label for="">使用者代號</label>
+    <div  class="input">
+      <input formControlName="user" [type] = "showUser ? 'text' : 'password'">
+      <i [class]="showUser ? 'pi pi-eye' : 'pi pi-eye-slash'" (mousedown)="toggleUser()"></i>
+    </div>
+    <div *ngIf="user?.touched && user?.invalid && user?.errors" class="error">
+      <div *ngIf="user?.errors?.required">請輸入使用者代號</div>
+      <div *ngIf="user?.errors?.minlength">使用者代號輸入至少10位</div>
+    </div>
+  </div>
+  <div>
+    <label for="">使用者密碼</label>
+    <div class="input">
+      <input formControlName="password" [type] = "showPassword ? 'text' : 'password'">
+      <i [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'" (mousedown)="togglePassword()"></i>
+    </div>
+    <div *ngIf="password?.touched && password?.invalid && password?.errors" class="error">
+      <div *ngIf="password?.errors?.required">請輸入密碼</div>
+      <div *ngIf="password?.errors?.minlength">密碼輸入至少10位</div>
+    </div>
+  </div>
+
+  <button [disabled]="loginForm.invalid"  (click)="onSubmit()">登入</button>
+  <!-- <p-button icon="pi pi-check" [rounded]="true" [text]="true" /> -->
+</form>

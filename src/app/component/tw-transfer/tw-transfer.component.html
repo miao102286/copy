@@ -1,0 +1,25 @@
+<p>{{name}}</p>
+<!-- 轉入同行帳戶 -->
+<form action="" [formGroup]="transferForm">
+  <div>
+    轉出帳號
+    <select name="" id="" formControlName="formAccoint">
+      <option value=""  disabled selected>請選擇帳號</option>
+      <option value="27772001662221">27772001662221</option>
+      <option value="29872001662256">29872001662256</option>
+    </select>
+  </div>
+  <div>
+    轉入帳號
+    <select name="" id="" formControlName="toAccount">
+      <option value=""  disabled selected>請選擇帳號</option>
+      <option value="27772001662221">27772001662221</option>
+      <option value="29872001662256">29872001662256</option>
+    </select>
+  </div>
+  <div>
+    轉出金額
+    <input type="number" formControlName="amount">
+  </div>
+  <button (click)="onSubmit()">確認</button>
+</form>
